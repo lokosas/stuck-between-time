@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo018gfflmtv"]
+
+[ext_resource type="Texture2D" uid="uid://ljplbm5yewhy" path="res://Assets/Menu/MainTitle.png" id="1_rbr34"]
+[ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="2_vbllu"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.966462, 0.969529, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 1056.0
+offset_bottom = 960.0
+texture = ExtResource("1_rbr34")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 328.0
+offset_right = 691.0
+offset_bottom = 388.0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vbllu")
+theme_override_font_sizes/font_size = 50
+text = " Start Game "
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vbllu")
+theme_override_font_sizes/font_size = 40
+text = "Quit Game"
