@@ -1,3 +1,3 @@
 extends Node
 
-var oldTime := false
+var oldTime := true

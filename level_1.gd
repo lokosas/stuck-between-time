@@ -17,8 +17,8 @@ func toggle_time():
 	#$Oldtime.visible = Global.oldTime
 	
 	if Global.oldTime:
-		$Oldtime.position.y = -2000
-		$Newtime.position.y = og_newtime_pos.y  # Bring the new map back
-	else:
 		$Newtime.position.y = -2000
-		$Oldtime.position.y = og_oldtime_pos.y
+		$Oldtime.position.y = og_newtime_pos.y  # Bring the new map back
+	else:
+		$Oldtime.position.y = -2000
+		$Newtime.position.y = og_oldtime_pos.y

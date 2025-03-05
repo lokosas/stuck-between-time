@@ -16,3 +16,6 @@ texture = ExtResource("2_kqvnn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_srdbq")
+
+[node name="ShootDelay" type="Timer" parent="."]
+one_shot = true

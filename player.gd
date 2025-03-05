@@ -29,8 +29,8 @@ func handle_actions():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		handle_jump()
 	if Input.is_action_just_pressed("projectile"):
-		spawn_projectile()
-
+		spawn_projectile(0 if Global.oldTime else 1)
+		
 func handle_movement():
 	var direction = Input.get_axis("left", "right")
 	if direction:
@@ -41,21 +41,32 @@ func handle_movement():
 func handle_jump():
 	velocity.y = jumpforce
 
-func spawn_projectile():
+func spawn_projectile(type):
+	
 	var temp_projectile = projectile.instantiate()
 	get_parent().add_child(temp_projectile)  # Add it to the main scene, not the player
-
-	# Set projectile's position to player's position
-	temp_projectile.global_position = global_position  
-
-	# Get the mouse position relative to the world
+	
 	var mouse_pos = get_global_mouse_position()
-
-	# Get direction and speed based on distance
 	var direction = (mouse_pos - global_position).normalized()  # Unit vector (keeps direction)
-	var shoot_speed = global_position.distance_to(mouse_pos) * 3  # Scale speed
-	shoot_speed = clamp(shoot_speed, 180.0, 450.0)  # Clamp speed between 200 and 400
-
-	# Apply velocity using direction and speed
+	var shoot_speed : float
+	
+	match type:
+		0:
+			shoot_speed = global_position.distance_to(mouse_pos) * 3  # Scale speed
+			shoot_speed = clamp(shoot_speed, 180.0, 450.0)  # Clamp speed between 200 and 400
+			temp_projectile.downforce = 600
+			$ShootDelay.wait_time = 0.4
+		1:
+			shoot_speed = 500
+			temp_projectile.downforce = 100
+			$ShootDelay.wait_time = 0.1
+	
+	temp_projectile.global_position = global_position
 	temp_projectile.velocity = direction * shoot_speed
 	temp_projectile.rotation = temp_projectile.velocity.angle()
+		
+	if $ShootDelay.is_stopped() or $ShootDelay.time_left > $ShootDelay.wait_time:
+		$ShootDelay.start()
+	else:
+		temp_projectile.queue_free()
+	
