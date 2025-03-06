@@ -19,3 +19,7 @@ shape = SubResource("RectangleShape2D_srdbq")
 
 [node name="ShootDelay" type="Timer" parent="."]
 one_shot = true
+
+[node name="DashDelay" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

@@ -13,8 +13,8 @@ func _process(delta):
 		toggle_time()
 
 func toggle_time():
-	#$Newtime.visible = not Global.oldTime
-	#$Oldtime.visible = Global.oldTime
+	$Newtime.visible = not Global.oldTime
+	$Oldtime.visible = Global.oldTime
 	
 	if Global.oldTime:
 		$Newtime.position.y = -2000
