@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://baj544l55h3wc"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/MenuScripts/pause_menu.gd" id="1_0pon5"]
+[ext_resource type="Script" uid="uid://dwollxb36c1ns" path="res://Assets/Scripts/MenuScripts/pause_menu.gd" id="1_0pon5"]
 [ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="1_yvnlv"]
 [ext_resource type="Theme" uid="uid://curr245jwo8ae" path="res://Assets/Styles/Button.tres" id="2_jgwr8"]
-[ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_k5bpy"]
-[ext_resource type="Script" path="res://Assets/Scripts/MenuScripts/ButtonHover.gd" id="3_e6483"]
+[ext_resource type="Shader" uid="uid://v2p32vik43b1" path="res://Assets/Shaders/blur.gdshader" id="2_k5bpy"]
+[ext_resource type="Script" uid="uid://p0p0iutyusl5" path="res://Assets/Scripts/MenuScripts/ButtonHover.gd" id="3_e6483"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m0c43"]
 shader = ExtResource("2_k5bpy")
