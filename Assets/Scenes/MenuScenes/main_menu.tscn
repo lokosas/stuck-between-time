@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmo018gfflmtv"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MenuScripts/main_menu.gd" id="1_1igkf"]
+[ext_resource type="Texture2D" uid="uid://ljplbm5yewhy" path="res://Assets/Images/Menu/MainTitle.png" id="2_wb6rn"]
+[ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="3_88thb"]
+[ext_resource type="Theme" uid="uid://curr245jwo8ae" path="res://Assets/Styles/Button.tres" id="3_kl7bi"]
+[ext_resource type="Script" path="res://Assets/Scripts/MenuScripts/ButtonHover.gd" id="4_q6ift"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1igkf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.966462, 0.969529, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 1056.0
+offset_bottom = 960.0
+texture = ExtResource("2_wb6rn")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 2
+offset_left = 424.0
+offset_top = 280.0
+offset_right = 728.0
+offset_bottom = 362.0
+theme = ExtResource("3_kl7bi")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+script = ExtResource("4_q6ift")
+distance = 10
+
+[node name="Label" type="Label" parent="Start"]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_88thb")
+theme_override_font_sizes/font_size = 64
+text = " Start Game 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 488.0
+offset_top = 376.0
+offset_right = 664.0
+offset_bottom = 418.0
+theme = ExtResource("3_kl7bi")
+script = ExtResource("4_q6ift")
+distance = 6
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_88thb")
+theme_override_font_sizes/font_size = 32
+text = "Quit Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.086
+anchor_right = 0.312
+anchor_bottom = 0.259
+offset_left = 296.32
+offset_top = 104.272
+offset_right = 360.576
+offset_bottom = 128.168
+theme_override_constants/separation = 16
+alignment = 1
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://curr245jwo8ae"]
+
+[ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="1_bg7kd"]
+[ext_resource type="Texture2D" uid="uid://blax1lb7yh3o0" path="res://Assets/Images/Menu/Button_Pressed.png" id="2_sw8li"]
+[ext_resource type="Texture2D" uid="uid://cit3a3cqh2buw" path="res://Assets/Images/Menu/Button.png" id="3_1nwr2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyr4e"]
+texture = ExtResource("2_sw8li")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3504"]
+texture = ExtResource("3_1nwr2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xueqg"]
+texture = ExtResource("2_sw8li")
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_bg7kd")
+Button/icons/Background = ExtResource("2_sw8li")
+Button/styles/hover = SubResource("StyleBoxTexture_nyr4e")
+Button/styles/normal = SubResource("StyleBoxTexture_y3504")
+Button/styles/pressed = SubResource("StyleBoxTexture_xueqg")

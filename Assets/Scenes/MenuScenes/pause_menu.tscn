@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://baj544l55h3wc"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MenuScripts/pause_menu.gd" id="1_0pon5"]
+[ext_resource type="FontFile" uid="uid://cmdrtjiop0mew" path="res://Assets/Fonts/Pixel Game.otf" id="1_yvnlv"]
+[ext_resource type="Theme" uid="uid://curr245jwo8ae" path="res://Assets/Styles/Button.tres" id="2_jgwr8"]
+[ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="2_k5bpy"]
+[ext_resource type="Script" path="res://Assets/Scripts/MenuScripts/ButtonHover.gd" id="3_e6483"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0c43"]
+shader = ExtResource("2_k5bpy")
+shader_parameter/lod = 0.5
+
+[sub_resource type="Theme" id="Theme_pf4is"]
+
+[node name="Pause Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0pon5")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_m0c43")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 576.0
+theme = SubResource("Theme_pf4is")
+color = Color(0.984883, 0.769478, 0.506376, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0.751415, 0, 0.277518, 1)
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 64
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 496.0
+offset_top = 184.0
+offset_right = 656.0
+offset_bottom = 264.0
+theme = ExtResource("2_jgwr8")
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+script = ExtResource("3_e6483")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+offset_left = 496.0
+offset_top = 272.0
+offset_right = 656.0
+offset_bottom = 352.0
+theme = ExtResource("2_jgwr8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+text = "
+"
+script = ExtResource("3_e6483")
+
+[node name="Label" type="Label" parent="Button2"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 2
+offset_left = 496.0
+offset_top = 360.0
+offset_right = 656.0
+offset_bottom = 440.0
+theme = ExtResource("2_jgwr8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+script = ExtResource("3_e6483")
+
+[node name="Label" type="Label" parent="Button3"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 2
+offset_left = 496.0
+offset_top = 448.0
+offset_right = 656.0
+offset_bottom = 528.0
+theme = ExtResource("2_jgwr8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+text = "
+"
+script = ExtResource("3_e6483")
+
+[node name="Label" type="Label" parent="Button4"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("1_yvnlv")
+theme_override_font_sizes/font_size = 38
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
