@@ -15,9 +15,11 @@ shader_parameter/lod = 0.5
 [node name="Pause Menu" type="Control"]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0pon5")
@@ -28,25 +30,29 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -324.0
+offset_right = 64.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 64.0
-offset_right = 832.0
-offset_bottom = 576.0
+offset_left = -128.0
+offset_top = -260.0
+offset_right = 128.0
+offset_bottom = 252.0
 theme = SubResource("Theme_pf4is")
 color = Color(0.984883, 0.769478, 0.506376, 1)
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 64.0
-offset_right = 832.0
-offset_bottom = 168.0
+offset_left = -256.0
+offset_top = -260.0
+offset_right = 256.0
+offset_bottom = -156.0
 theme_override_colors/font_color = Color(0.751415, 0, 0.277518, 1)
 theme_override_fonts/font = ExtResource("1_yvnlv")
 theme_override_font_sizes/font_size = 64
@@ -54,18 +60,18 @@ text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Resume" type="Button" parent="."]
 layout_mode = 2
-offset_left = 496.0
-offset_top = 184.0
-offset_right = 656.0
-offset_bottom = 264.0
+offset_left = -80.0
+offset_top = -140.0
+offset_right = 80.0
+offset_bottom = -60.0
 theme = ExtResource("2_jgwr8")
 theme_override_fonts/font = ExtResource("1_yvnlv")
 theme_override_font_sizes/font_size = 38
 script = ExtResource("3_e6483")
 
-[node name="Label" type="Label" parent="Button"]
+[node name="Label" type="Label" parent="Resume"]
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 80.0
@@ -75,12 +81,12 @@ text = "Resume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button2" type="Button" parent="."]
+[node name="Settings" type="Button" parent="."]
 layout_mode = 2
-offset_left = 496.0
-offset_top = 272.0
-offset_right = 656.0
-offset_bottom = 352.0
+offset_left = -80.0
+offset_top = -52.0
+offset_right = 80.0
+offset_bottom = 28.0
 theme = ExtResource("2_jgwr8")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_yvnlv")
@@ -89,7 +95,7 @@ text = "
 "
 script = ExtResource("3_e6483")
 
-[node name="Label" type="Label" parent="Button2"]
+[node name="Label" type="Label" parent="Settings"]
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 80.0
@@ -99,19 +105,19 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button3" type="Button" parent="."]
+[node name="Restart" type="Button" parent="."]
 layout_mode = 2
-offset_left = 496.0
-offset_top = 360.0
-offset_right = 656.0
-offset_bottom = 440.0
+offset_left = -80.0
+offset_top = 36.0
+offset_right = 80.0
+offset_bottom = 116.0
 theme = ExtResource("2_jgwr8")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_yvnlv")
 theme_override_font_sizes/font_size = 38
 script = ExtResource("3_e6483")
 
-[node name="Label" type="Label" parent="Button3"]
+[node name="Label" type="Label" parent="Restart"]
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 80.0
@@ -121,12 +127,12 @@ text = "Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button4" type="Button" parent="."]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 2
-offset_left = 496.0
-offset_top = 448.0
-offset_right = 656.0
-offset_bottom = 528.0
+offset_left = -80.0
+offset_top = 124.0
+offset_right = 80.0
+offset_bottom = 204.0
 theme = ExtResource("2_jgwr8")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_yvnlv")
@@ -135,7 +141,7 @@ text = "
 "
 script = ExtResource("3_e6483")
 
-[node name="Label" type="Label" parent="Button4"]
+[node name="Label" type="Label" parent="Quit"]
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 80.0
@@ -144,3 +150,8 @@ theme_override_font_sizes/font_size = 38
 text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
