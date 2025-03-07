@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	toggle_time()
-	
+
 func _process(delta):
 	if Input.is_action_just_pressed("timeswap"):
 		Global.oldTime = !Global.oldTime
