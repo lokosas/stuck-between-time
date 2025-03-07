@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3mywdjg7mc86"]
 
-[ext_resource type="Script" uid="uid://by51bp72nl7w8" path="res://weapon.gd" id="1_swcir"]
-[ext_resource type="Texture2D" uid="uid://bfh6rffq2t738" path="res://icon.svg" id="2_o2wld"]
-[ext_resource type="Texture2D" uid="uid://b8015csf8tow4" path="res://clock.svg" id="3_8xwfw"]
+[ext_resource type="Script" uid="uid://by51bp72nl7w8" path="res://Assets/Scripts/ResourceScripts/weapon.gd" id="1_swcir"]
+[ext_resource type="Texture2D" uid="uid://bfh6rffq2t738" path="res://Assets/Svg/icon.svg" id="2_o2wld"]
+[ext_resource type="Texture2D" uid="uid://b8015csf8tow4" path="res://Assets/Svg/clock.svg" id="3_8xwfw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swcir"]
 size = Vector2(37.125, 10.6406)
@@ -32,6 +32,7 @@ texture = ExtResource("3_8xwfw")
 
 [node name="AttackDelay" type="Timer" parent="."]
 
+[node name="SwitchDelay" type="Timer" parent="."]
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="AttackDelay" to="." method="_on_attack_delay_timeout"]

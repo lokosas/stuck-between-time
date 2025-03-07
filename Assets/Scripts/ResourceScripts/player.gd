@@ -41,7 +41,7 @@ func handle_actions(delta):
 		is_jumping = false
 		is_walljumping = false
 		
-	handle_proj_charge(delta)
+	#handle_proj_charge(delta)
 	handle_dashing(delta)
 
 func handle_movement():
@@ -84,6 +84,7 @@ func handle_dashing(delta):
 			velocity.x = direction_x * dash_speed  # Keep moving in the same direction
 			velocity.y = -dash_speed * 0.5  # Upward boost (adjust multiplier for feel)
 		
+		
 	if is_dashing:
 		dash_remain += delta
 		create_dash_trail()
@@ -94,39 +95,6 @@ func handle_dashing(delta):
 	if dash_remain > dash_length and is_on_floor():
 		dash_remain = 0.0
 		$DashDelay.start()
-
-
-func handle_proj_charge(delta):
-	if charging_proj:
-		hold_time_proj += delta
-	
-	if Input.is_action_just_pressed("projectile"):
-		hold_time_proj = 0.0
-		charging_proj = true
-	
-	if Input.is_action_just_released("projectile"):
-		charging_proj = false
-		spawn_projectile(0 if Global.oldTime else 1, hold_time_proj)
-
-func spawn_projectile(type, charge):
-	var temp_projectile = projectile.instantiate()
-	get_parent().add_child(temp_projectile)
-	
-	var mouse_pos = get_global_mouse_position()
-	var direction = (mouse_pos - global_position).normalized()
-	var shoot_speed = 500.0
-	
-	match type:
-		0:
-			shoot_speed = clamp(global_position.distance_to(mouse_pos) * 3, 180.0, 450.0)
-			temp_projectile.downforce = 800
-		1:
-			shoot_speed = 500.0
-			temp_projectile.downforce = 100
-	
-	temp_projectile.global_position = global_position
-	temp_projectile.velocity = direction * shoot_speed
-	temp_projectile.rotation = temp_projectile.velocity.angle()
 	
 func create_dash_trail():
 	var ghost = Sprite2D.new()
