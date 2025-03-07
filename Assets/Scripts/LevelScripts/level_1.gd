@@ -13,3 +13,4 @@ func toggle_time():
 	$Oldtime.visible = Global.oldTime
 	$Newtime.collision_enabled = not Global.oldTime
 	$Oldtime.collision_enabled = Global.oldTime
+#
