@@ -140,4 +140,3 @@ func create_dash_trail():
 	tween.tween_property(ghost, "modulate", Color(1, 1, 1, 0), 0.2)  # Fade
 	tween.tween_callback(ghost.queue_free)  # Delete after fade
 	
-

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqomyg8qgsbi7"]
+[gd_scene load_steps=5 format=3 uid="uid://bqomyg8qgsbi7"]
 
 [ext_resource type="Script" uid="uid://c4dnvq1lwydie" path="res://Assets/Scripts/ResourceScripts/player.gd" id="1_wl18h"]
 [ext_resource type="Texture2D" uid="uid://cudc55o4h1sf5" path="res://Assets/Images/Player/Player.png" id="2_kqvnn"]
+[ext_resource type="PackedScene" uid="uid://d3mywdjg7mc86" path="res://weapon.tscn" id="3_exfu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srdbq"]
 size = Vector2(11, 13)
@@ -23,3 +24,6 @@ one_shot = true
 [node name="DashDelay" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="Weapon" parent="." instance=ExtResource("3_exfu2")]
+position = Vector2(12, 1)
